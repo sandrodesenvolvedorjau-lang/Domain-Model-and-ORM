@@ -7,10 +7,10 @@ import java.time.Instant;
 @Entity
 @Table(name = "tb_blocos")
 public class Bloco extends BaseEntity{
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private Instant inicio;
 
-    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+    @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private Instant fim;
 
     @ManyToOne
