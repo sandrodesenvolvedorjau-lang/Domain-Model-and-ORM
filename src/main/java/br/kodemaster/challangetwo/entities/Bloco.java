@@ -1,8 +1,6 @@
 package br.kodemaster.challangetwo.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.Instant;
 
@@ -14,6 +12,10 @@ public class Bloco extends BaseEntity{
 
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant fim;
+
+    @ManyToOne
+    @JoinColumn(name = "atividade_id", referencedColumnName = "id")
+    private Atividade atividade;
 
     public Bloco() {}
 
@@ -36,5 +38,9 @@ public class Bloco extends BaseEntity{
 
     public void setFim(Instant fim) {
         this.fim = fim;
+    }
+
+    public Atividade getAtividade() {
+        return atividade;
     }
 }
